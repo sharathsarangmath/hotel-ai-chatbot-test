@@ -3,3 +3,4 @@ deepeval
 pytest
 pytest-asyncio
 python-dotenv
+pytest-html

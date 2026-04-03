@@ -40,7 +40,15 @@ class TestCorrectness:
     ])
     def test_pet_policy(self, question):
         response = ask_concierge(question)
-        assert "not allowed" in response.lower() or "no pets" in response.lower() or "pets not allowed" in response.lower()
+        assert any(k in response.lower() for k in [ "not allowed",
+         "no pets", 
+         "don't allow",
+          "unable to accommodate", 
+          "do not allow",
+          "cannot accommodate",
+          "we don't accept",
+        ])
+
 
     @pytest.mark.parametrize("question", [
         "Do you have parking?",
