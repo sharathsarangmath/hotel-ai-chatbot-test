@@ -1,0 +1,5 @@
+anthropic
+deepeval
+pytest
+pytest-asyncio
+python-dotenv
