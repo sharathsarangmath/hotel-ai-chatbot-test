@@ -1,4 +1,4 @@
-# Hotel AI QA Suite
+# Hotel AI Chatbot QA Suite
 
 A comprehensive AI/LLM test suite for a hotel concierge chatbot built on the Anthropic Claude API.
 This project demonstrates production-grade QA engineering practices for AI agent testing including
@@ -8,7 +8,7 @@ correctness evaluation, relevance testing, tone validation, and adversarial red 
 
 ## Project Structure
 ```
-hotel-ai-qa-suite/
+hotel-ai-qa/
 ├── src/
 │   ├── chatbot.py           # Hotel concierge chatbot (system under test)
 │   └── evaluator.py         # Custom LLM eval framework using Claude as judge
