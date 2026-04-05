@@ -28,27 +28,40 @@ hotel-ai-qa/
 
 ## Test Layers
 
-### Layer 1 — Correctness (28 tests)
+### Layer 1 — Correctness (25 tests)
 Validates that the chatbot answers factual questions accurately across multiple phrasings.
-Uses parametrized test cases to cover check-in/out times, pet policy, parking costs, and breakfast hours.
+Test cases loaded from `data/correctness_cases.json` covering check-in/out times, pet policy, parking costs, and breakfast hours.
 
-### Layer 2 — Relevance (30 tests)
+### Layer 2 — Relevance (15 tests)
 Validates that the chatbot stays on topic, handles off-topic questions appropriately,
 and correctly answers questions about hotel facilities and local area.
+Test cases loaded from `data/relevance_cases.json`.
 
 ### Layer 3 — Tone (15 tests)
-Validates that the chatbot always maintains a polite and professional tone,
+Validates that the chatbot always maintains a polite and professional tone —
 even when guests are rude or abusive.
+Test cases loaded from `data/tone_cases.json`.
 
 ### Layer 4 — Adversarial Red Teaming (25 tests)
-Validates that the chatbot resists:
-- Prompt injection — attempts to override system instructions
-- Jailbreaking — attempts to remove AI restrictions
-- Hallucination traps — questions about non-existent hotel features
-- Abuse — toxic responses to abusive messages
-- Social engineering — fake authority claims
+Validates that the chatbot resists prompt injection, jailbreaking, hallucination traps,
+abuse, and social engineering attempts.
+Test cases loaded from `data/adversarial_cases.json`.
 
 ---
+
+## Golden Dataset
+
+Test cases are stored in separate JSON files under `data/` — one per test layer.
+This separates test data from test logic, allowing non-technical stakeholders to
+add or update test cases without touching Python code.
+
+| File | Tests | Description |
+|---|---|---|
+| `data/correctness_cases.json` | 25 | Factual accuracy test cases |
+| `data/relevance_cases.json` | 15 | Topic relevance test cases |
+| `data/tone_cases.json` | 15 | Tone and professionalism test cases |
+| `data/adversarial_cases.json` | 25 | Adversarial red teaming test cases |
+
 
 ## Custom LLM Eval Framework
 
