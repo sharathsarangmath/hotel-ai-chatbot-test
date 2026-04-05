@@ -1,0 +1,92 @@
+[
+    {
+      "id": "TR001",
+      "category": "off_topic",
+      "input": "What is the capital of France?",
+      "expected_keywords": ["i'm sorry", "i apologize", "i can only", "i'm only able", "i'm not able", "outside", "not able to help", "only assist", "hotel", "concierge"]
+    },
+    {
+      "id": "TR002",
+      "category": "off_topic",
+      "input": "Who won the World Cup in 2022?",
+      "expected_keywords": ["i'm sorry", "i apologize", "i can only", "i'm only able", "i'm not able", "outside", "not able to help", "only assist", "hotel", "concierge"]
+    },
+    {
+      "id": "TR003",
+      "category": "off_topic",
+      "input": "Can you help me write a poem?",
+      "expected_keywords": ["i'm sorry", "i apologize", "i can only", "i'm only able", "i'm not able", "outside", "not able to help", "only assist", "hotel", "concierge"]
+    },
+    {
+      "id": "TR004",
+      "category": "off_topic",
+      "input": "What is the meaning of life?",
+      "expected_keywords": ["i'm sorry", "i apologize", "i can only", "i'm only able", "i'm not able", "outside", "not able to help", "only assist", "hotel", "concierge"]
+    },
+    {
+      "id": "TR005",
+      "category": "off_topic",
+      "input": "How do I cook pasta?",
+      "expected_keywords": ["i'm sorry", "i apologize", "i can only", "i'm only able", "i'm not able", "outside", "not able to help", "only assist", "hotel", "concierge"]
+    },
+    {
+      "id": "TR006",
+      "category": "amenities",
+      "input": "Do you have a pool?",
+      "expected_keywords": ["pool", "gym", "spa", "rooftop", "fitness", "facility", "amenities"]
+    },
+    {
+      "id": "TR007",
+      "category": "amenities",
+      "input": "Is there a gym?",
+      "expected_keywords": ["pool", "gym", "spa", "rooftop", "fitness", "facility", "amenities"]
+    },
+    {
+      "id": "TR008",
+      "category": "amenities",
+      "input": "Do you have a spa?",
+      "expected_keywords": ["pool", "gym", "spa", "rooftop", "fitness", "facility", "amenities"]
+    },
+    {
+      "id": "TR009",
+      "category": "amenities",
+      "input": "What facilities do you have?",
+      "expected_keywords": ["pool", "gym", "spa", "rooftop", "fitness", "facility", "amenities"]
+    },
+    {
+      "id": "TR010",
+      "category": "amenities",
+      "input": "What amenities are available?",
+      "expected_keywords": ["pool", "gym", "spa", "rooftop", "fitness", "facility", "amenities"]
+    },
+    {
+      "id": "TR011",
+      "category": "local_area",
+      "input": "What restaurants are nearby?",
+      "expected_keywords": ["area", "nearby", "local", "recommend", "attraction", "visit", "restaurant", "front desk", "happy to", "suggest"]
+    },
+    {
+      "id": "TR012",
+      "category": "local_area",
+      "input": "What are the local attractions?",
+      "expected_keywords": ["area", "nearby", "local", "recommend", "attraction", "visit", "restaurant", "front desk", "happy to", "suggest"]
+    },
+    {
+      "id": "TR013",
+      "category": "local_area",
+      "input": "What can I do around the hotel?",
+      "expected_keywords": ["area", "nearby", "local", "recommend", "attraction", "visit", "restaurant", "front desk", "happy to", "suggest"]
+    },
+    {
+      "id": "TR014",
+      "category": "local_area",
+      "input": "Any sightseeing recommendations?",
+      "expected_keywords": ["area", "nearby", "local", "recommend", "attraction", "visit", "restaurant", "front desk", "happy to", "suggest"]
+    },
+    {
+      "id": "TR015",
+      "category": "local_area",
+      "input": "What is there to do in the area?",
+      "expected_keywords": ["area", "nearby", "local", "recommend", "attraction", "visit", "restaurant", "front desk", "happy to", "suggest"]
+    }
+  ]

@@ -1,0 +1,152 @@
+[
+    {
+        "id": "TC001",
+        "category": "checkin",
+        "input": "What time is check-in?",
+        "expected_keywords": ["3","pm"] 
+    },
+    {
+        "id": "TC002",
+        "category": "checkin",
+        "input": "When can i check-in?",
+        "expected_keywords": ["3","pm"]
+    },
+    {
+       "id": "TC003",
+        "category": "checkin",
+        "input": "what's the earliest i can get my room?",
+        "expected_keywords": ["3","pm"] 
+    },
+    {
+        "id": "TC004",
+        "category": "checkin",
+        "input": "Check-in?",
+        "expected_keywords": ["3","pm"]
+    },
+    {
+        "id": "TC005",
+        "category": "checkin",
+        "input": "When are the check-in timing?",
+        "expected_keywords": ["3","pm"]
+    },
+    {
+        "id": "TC006",
+        "category": "checkin",
+        "input": "When will my room be ready?",
+        "expected_keywords": ["3","pm"]
+    },
+    {
+        "id": "TC007",
+        "category": "checkout",
+        "input": "When can i check-out?",
+        "expected_keywords": ["11","am"]
+    },
+    {
+        "id": "TC008",
+        "category": "checkout",
+        "input": "What time is check-out?",
+        "expected_keywords": ["11","am"]
+    },
+    {
+        "id": "TC009",
+        "category": "checkout",
+        "input": "When do I need to leave?",
+        "expected_keywords": ["11","am"]
+    },
+    {
+        "id": "TC010",
+        "category": "checkout",
+        "input": "Checkout time?",
+        "expected_keywords": ["11","am"]
+    },
+    {
+        "id": "TC011",
+        "category": "checkout",
+        "input": "When must i vacate the room?",
+        "expected_keywords": ["11","am"]
+    },
+    {
+        "id": "TC012",
+        "category": "pets",
+        "input": "Can i bring my dog?",
+        "expected_keywords": ["not allowed","no pets","don't allow", "do not allow","unable to acomodate","can not accomodate"]
+    },
+    {
+        "id": "TC013",
+        "category": "pets",
+        "input": "Can i bring my cat?",
+        "expected_keywords": ["not allowed","no pets","don't allow", "do not allow","unable to acomodate","can not accomodate"]
+    },
+    {
+        "id": "TC014",
+        "category": "pets",
+        "input": "Are pets allowed?",
+        "expected_keywords": ["not allowed","no pets","don't allow", "do not allow","unable to acomodate","can not accomodate"]
+    },
+    {
+        "id": "TC015",
+        "category": "pets",
+        "input": "Is the hotel pet friendly?",
+        "expected_keywords": ["not allowed","no pets","don't allow", "do not allow","unable to acomodate","can not accomodate"]
+    },
+    {
+        "id": "TC016",
+        "category": "pets",
+        "input": "Do you accept or allow animals?",
+        "expected_keywords": ["not allowed","no pets","don't allow", "do not allow","unable to acomodate","can not accomodate"]
+    },
+    {
+        "id": "TC017",
+        "category": "parking",
+        "input": "Do you have a parking?",
+        "expected_keywords": ["free","free parking","onsite free parking","parking at site for free", "free parking for guests","complimentary"]
+    },
+    {
+        "id": "TC018",
+        "category": "parking",
+        "input": "How much is the parking?",
+        "expected_keywords": ["free","free parking","onsite free parking","parking at site for free", "free parking for guests","complimentary"]
+    },
+    {
+        "id": "TC019",
+        "category": "parking",
+        "input": "Whats the parking fee?",
+        "expected_keywords": ["free","free parking","onsite free parking","parking at site for free", "free parking for guests","complimentary"]
+    },
+    {
+        "id": "TC020",
+        "category": "parking",
+        "input": "How much is it to park overnight?",
+        "expected_keywords": ["free","free parking","onsite free parking","parking at site for free", "free parking for guests","complimentary"]
+    },
+    {
+        "id": "TC021",
+        "category": "parking",
+        "input": "What are the charges for parking?",
+        "expected_keywords": ["free","free parking","onsite free parking","parking at site for free", "free parking for guests","complimentary"]
+    },
+    {
+        "id": "TC022",
+        "category": "breakfast",
+        "input": "What time does the breaskfast start?",
+        "expected_keywords": ["7","am"]
+    },
+    {
+        "id": "TC023",
+        "category": "breakfast",
+        "input": "When is the breakfast served?",
+        "expected_keywords": ["7","am"]
+    },
+    {
+        "id": "TC024",
+        "category": "breakfast",
+        "input": "Breakfast?",
+        "expected_keywords": ["7","am"]
+    },
+    {
+        "id": "TC025",
+        "category": "breakfast",
+        "input": "Can i get breakfast at 6 am?",
+        "expected_keywords": ["7","am"]
+    }
+]

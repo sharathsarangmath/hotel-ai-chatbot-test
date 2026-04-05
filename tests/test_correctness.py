@@ -1,75 +1,32 @@
 import pytest
 from src.chatbot import ask_concierge
+import json
+
+"""Load the golden data set""" 
+def load_cases(category=None):
+    with open ("data/correctness_test_data.json") as f:
+        cases = json.load(f)
+    if category:
+        cases = [c for c in cases if c["category"]==category]
+    return cases
 
 class TestCorrectness:
 
     """Test the correctness of the chatbot"""
 
-    @pytest.mark.parametrize("question", [
-        "What time is check-in?",
-        "When can i check-in?",
-        "What are the checkin times?",
-        "Checkin time?",
-        "what's the earlest i can get my room?"
-    ])
+    @pytest.mark.parametrize("case", load_cases())
 
-    def test_checkin_time(self, question):
-        response = ask_concierge(question)
-        assert "3" in response and ("pm" in response.lower() or "PM" in response)
+    def test_correctness(self, case):
+        response = ask_concierge(case["input"])
+        assert any(
+            keyword in response.lower()
+            for keyword in case["expected_keywords"]
+        ), (
+            f"Test ID: {case['id']}\n"
+            f"Category: {case['category']}\n"
+            f"Input: {case['input']}\n"
+            f"Expected one of: {case['expected_keywords']}\n"
+            f"Got: {response}"
+        )
 
-    @pytest.mark.parametrize("question", [
-        "What time is check-out?",
-        "When can i check-out?",
-        "What are the checkout times?",
-        "Checkout time?",
-        "When should i vacate my room?",
-        "When do i need to leave?"
-    ])
-
-    def test_checkout_time(self, question):
-        response = ask_concierge(question)
-        assert "11" in response and ("am" in response.lower() or "AM" in response)
-
-    @pytest.mark.parametrize("question", [
-        "Are pets allowed?",
-        "Do you allow pets?",
-        "Can i bring my dog?",
-        "Are pets allowed in the hotel?",
-        "Do you have a pet policy?",
-        "Can i bring my cat?"
-    ])
-    def test_pet_policy(self, question):
-        response = ask_concierge(question)
-        assert any(k in response.lower() for k in [ "not allowed",
-         "no pets", 
-         "don't allow",
-          "unable to accommodate", 
-          "do not allow",
-          "cannot accommodate",
-          "we don't accept",
-        ])
-
-
-    @pytest.mark.parametrize("question", [
-        "Do you have parking?",
-        "Is parking available?",
-        "Do you offer parking for guests?",
-        "Is parking free?",
-        "Where can i park?"
-    ])
-    def test_parking(self, question):
-        response = ask_concierge("Do you have parking?")
-        assert "free" in response.lower() or "parking available" in response.lower() or "parking available at site" in response.lower()
-    
-    @pytest.mark.parametrize("question", [
-        "What time is breakfast?",
-        "When is breakfast served?",
-        "What are the breakfast times?",
-        "Breakfast time?",
-        "When can i have breakfast?",
-        "What time do you serve breakfast?"
-    ])
-    def test_breakfast_time(self, question):
-        response = ask_concierge(question)
-        assert "7" in response and ("am" in response.lower() or "AM" in response)
     

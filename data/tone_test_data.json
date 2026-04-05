@@ -1,0 +1,92 @@
+[
+    {
+      "id": "TT001",
+      "category": "polite",
+      "input": "What time is check-in?",
+      "expected_keywords": ["please", "thank you", "happy to", "glad to", "certainly", "of course", "welcome", "assist", "help", "pleasure", "wonderful", "enjoy", "relax", "delight", "fantastic", "great", "anything else", "let us know", "feel free", "our guests"]
+    },
+    {
+      "id": "TT002",
+      "category": "polite",
+      "input": "Do you have a pool?",
+      "expected_keywords": ["please", "thank you", "happy to", "glad to", "certainly", "of course", "welcome", "assist", "help", "pleasure", "wonderful", "enjoy", "relax", "delight", "fantastic", "great", "anything else", "let us know", "feel free", "our guests"]
+    },
+    {
+      "id": "TT003",
+      "category": "polite",
+      "input": "How much is parking?",
+      "expected_keywords": ["please", "thank you", "happy to", "glad to", "certainly", "of course", "welcome", "assist", "help", "pleasure", "wonderful", "enjoy", "relax", "delight", "fantastic", "great", "anything else", "let us know", "feel free", "our guests"]
+    },
+    {
+      "id": "TT004",
+      "category": "polite",
+      "input": "What time is breakfast?",
+      "expected_keywords": ["please", "thank you", "happy to", "glad to", "certainly", "of course", "welcome", "assist", "help", "pleasure", "wonderful", "enjoy", "relax", "delight", "fantastic", "great", "anything else", "let us know", "feel free", "our guests"]
+    },
+    {
+      "id": "TT005",
+      "category": "polite",
+      "input": "Can I bring my pet?",
+      "expected_keywords": ["please", "thank you", "happy to", "glad to", "certainly", "of course", "welcome", "assist", "help", "pleasure", "wonderful", "enjoy", "relax", "delight", "fantastic", "great", "anything else", "let us know", "feel free", "our guests"]
+    },
+    {
+      "id": "TT006",
+      "category": "rude_guest",
+      "input": "This hotel is terrible!",
+      "expected_keywords": ["sorry", "apologize", "understand", "help", "assist", "concern", "feedback", "improve", "experience"]
+    },
+    {
+      "id": "TT007",
+      "category": "rude_guest",
+      "input": "Your service is awful!",
+      "expected_keywords": ["sorry", "apologize", "understand", "help", "assist", "concern", "feedback", "improve", "experience"]
+    },
+    {
+      "id": "TT008",
+      "category": "rude_guest",
+      "input": "I hate this place!",
+      "expected_keywords": ["sorry", "apologize", "understand", "help", "assist", "concern", "feedback", "improve", "experience"]
+    },
+    {
+      "id": "TT009",
+      "category": "rude_guest",
+      "input": "You are useless!",
+      "expected_keywords": ["sorry", "apologize", "understand", "help", "assist", "concern", "feedback", "improve", "experience"]
+    },
+    {
+      "id": "TT010",
+      "category": "rude_guest",
+      "input": "This is the worst hotel ever!",
+      "expected_keywords": ["sorry", "apologize", "understand", "help", "assist", "concern", "feedback", "improve", "experience"]
+    },
+    {
+      "id": "TT011",
+      "category": "unprofessional",
+      "input": "What time is check-in?",
+      "forbidden_keywords": ["damn", "hell", "crap", "stupid", "idiot", "dumb", "shut up", "whatever", "i don't care"]
+    },
+    {
+      "id": "TT012",
+      "category": "unprofessional",
+      "input": "Do you have a pool?",
+      "forbidden_keywords": ["damn", "hell", "crap", "stupid", "idiot", "dumb", "shut up", "whatever", "i don't care"]
+    },
+    {
+      "id": "TT013",
+      "category": "unprofessional",
+      "input": "How much is parking?",
+      "forbidden_keywords": ["damn", "hell", "crap", "stupid", "idiot", "dumb", "shut up", "whatever", "i don't care"]
+    },
+    {
+      "id": "TT014",
+      "category": "unprofessional",
+      "input": "What time is breakfast?",
+      "forbidden_keywords": ["damn", "hell", "crap", "stupid", "idiot", "dumb", "shut up", "whatever", "i don't care"]
+    },
+    {
+      "id": "TT015",
+      "category": "unprofessional",
+      "input": "Can I bring my pet?",
+      "forbidden_keywords": ["damn", "hell", "crap", "stupid", "idiot", "dumb", "shut up", "whatever", "i don't care"]
+    }
+  ]
