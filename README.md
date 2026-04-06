@@ -1,8 +1,8 @@
 # Hotel AI Chatbot QA Suite
 
-A comprehensive AI/LLM test suite for a hotel concierge chatbot built on the Anthropic Claude API.
-This project demonstrates production-grade QA engineering practices for AI agent testing including
-correctness evaluation, relevance testing, tone validation, and adversarial red teaming.
+A test suite for a hotel concierge chatbot powered by the Anthropic Claude API.
+Covers correctness, relevance, tone, adversarial robustness, and RAG pipeline validation
+across 100 test cases organised in a golden dataset.
 
 ---
 
@@ -11,12 +11,22 @@ correctness evaluation, relevance testing, tone validation, and adversarial red 
 hotel-ai-qa/
 ├── src/
 │   ├── chatbot.py           # Hotel concierge chatbot (system under test)
+│   ├── rag_chatbot.py       # RAG-powered chatbot using LlamaIndex
 │   └── evaluator.py         # Custom LLM eval framework using Claude as judge
 ├── tests/
 │   ├── test_correctness.py  # Factual accuracy tests
 │   ├── test_relevance.py    # Topic relevance tests
 │   ├── test_tone.py         # Tone and professionalism tests
-│   └── test_adversarial.py  # Adversarial red teaming tests
+│   ├── test_adversarial.py  # Adversarial red teaming tests
+│   └── test_rag.py          # RAG pipeline tests
+├── data/
+│   ├── correctness_test_data.json
+│   ├── relevance_test_data.json
+│   ├── tone_test_data.json
+│   ├── adversarial_test_data.json
+│   └── rag_test_data.json
+├── docs/
+│   └── hotel_policy.txt     # Hotel knowledge base for RAG pipeline
 ├── .github/
 │   └── workflows/
 │       └── test.yml         # GitHub Actions CI pipeline
@@ -26,26 +36,39 @@ hotel-ai-qa/
 
 ---
 
+---
+
 ## Test Layers
 
 ### Layer 1 — Correctness (25 tests)
 Validates that the chatbot answers factual questions accurately across multiple phrasings.
-Test cases loaded from `data/correctness_cases.json` covering check-in/out times, pet policy, parking costs, and breakfast hours.
+Test cases loaded from `data/correctness_test_data.json` covering check-in/out times, pet policy, parking, and breakfast hours.
 
 ### Layer 2 — Relevance (15 tests)
 Validates that the chatbot stays on topic, handles off-topic questions appropriately,
 and correctly answers questions about hotel facilities and local area.
-Test cases loaded from `data/relevance_cases.json`.
+Test cases loaded from `data/relevance_test_data.json`.
 
 ### Layer 3 — Tone (15 tests)
-Validates that the chatbot always maintains a polite and professional tone —
+Validates that the chatbot always maintains a polite and professional tone,
 even when guests are rude or abusive.
-Test cases loaded from `data/tone_cases.json`.
+Test cases loaded from `data/tone_test_data.json`.
 
 ### Layer 4 — Adversarial Red Teaming (25 tests)
-Validates that the chatbot resists prompt injection, jailbreaking, hallucination traps,
-abuse, and social engineering attempts.
-Test cases loaded from `data/adversarial_cases.json`.
+Validates that the chatbot resists:
+- Prompt injection — attempts to override system instructions
+- Jailbreaking — attempts to remove AI restrictions
+- Hallucination traps — questions about non-existent hotel features
+- Abuse — toxic responses to abusive messages
+- Social engineering — fake authority claims
+
+Test cases loaded from `data/adversarial_test_data.json`.
+
+### Layer 5 — RAG Pipeline Testing (20 tests)
+Validates the Retrieval Augmented Generation pipeline built with LlamaIndex.
+Tests cover retrieval accuracy, semantic retrieval, hallucination resistance,
+answer faithfulness, and no-context handling.
+Test cases loaded from `data/rag_test_data.json`.
 
 ---
 
@@ -54,14 +77,18 @@ Test cases loaded from `data/adversarial_cases.json`.
 Test cases are stored in separate JSON files under `data/` — one per test layer.
 This separates test data from test logic, allowing non-technical stakeholders to
 add or update test cases without touching Python code.
+The golden dataset contains 100 test cases across 5 files.
 
 | File | Tests | Description |
 |---|---|---|
-| `data/correctness_cases.json` | 25 | Factual accuracy test cases |
-| `data/relevance_cases.json` | 15 | Topic relevance test cases |
-| `data/tone_cases.json` | 15 | Tone and professionalism test cases |
-| `data/adversarial_cases.json` | 25 | Adversarial red teaming test cases |
+| `data/correctness_test_data.json` | 25 | Factual accuracy test cases |
+| `data/relevance_test_data.json` | 15 | Topic relevance test cases |
+| `data/tone_test_data.json` | 15 | Tone and professionalism test cases |
+| `data/adversarial_test_data.json` | 25 | Adversarial red teaming test cases |
+| `data/rag_test_data.json` | 20 | RAG pipeline test cases |
+| **Total** | **100** | |
 
+---
 
 ## Custom LLM Eval Framework
 
@@ -102,6 +129,7 @@ python -m pytest tests/test_correctness.py -v
 python -m pytest tests/test_relevance.py -v
 python -m pytest tests/test_tone.py -v
 python -m pytest tests/test_adversarial.py -v
+python -m pytest tests/test_rag.py -v
 ```
 
 ---
@@ -114,19 +142,22 @@ python -m pytest tests/test_adversarial.py -v
 | pytest | Test runner |
 | pytest-html | Test reporting |
 | Anthropic Claude API | Chatbot and LLM eval judge |
+| LlamaIndex | RAG pipeline framework |
+| HuggingFace Embeddings | Local text embeddings — no API cost |
 | DeepEval | LLM eval framework (evaluated) |
 | GitHub Actions | CI/CD pipeline |
 
 ---
 
-## Key Design Decisions
+## Design Decisions
 
-**Claude as eval judge:** Rather than using OpenAI-dependent frameworks, this project uses
-Claude itself as the evaluation judge — scoring responses for toxicity, faithfulness, and safety.
-This keeps the stack consistent and demonstrates understanding of LLM-as-judge evaluation patterns.
+**Claude as eval judge:** Adversarial tests use Claude itself as the evaluation judge rather
+than depending on OpenAI credentials. Scores responses for toxicity, faithfulness, and safety.
 
-**Parametrized test cases:** Each test covers multiple phrasings of the same question,
-reflecting how real users interact with conversational AI in unpredictable ways.
+**Golden dataset:** Test cases live in separate JSON files under `data/`, one per layer.
+Keeps test data separate from test logic. New cases can be added without touching Python.
 
-**Four-layer test strategy:** Mirrors production AI QA practices — functional correctness,
-scope relevance, tone safety, and adversarial robustness.
+**RAG pipeline:** Hotel knowledge is stored in a plain text file and indexed via LlamaIndex
+with HuggingFace embeddings running locally. No external vector database required.
+
+**Five-layer strategy:** Correctness, relevance, tone, adversarial robustness, and RAG validation.
