@@ -27,12 +27,19 @@ Always be polite, helpful and concise. If you don't know something, say so hones
 
 def ask_concierge(question: str) -> str:
     """Send a question to the hotel concierge and return the response."""
-    message = client.messages.create(
-        model="claude-haiku-4-5",
-        max_tokens=1024,
-        system=SYSTEM_PROMPT,
-        messages=[
-            {"role": "user", "content": question}
-        ]
-    )
-    return message.content[0].text
+    if not question or not question.strip():
+        return "I'd be happy to help. Could you please ask me a question?"
+    try:
+        message = client.messages.create(
+            model="claude-haiku-4-5",
+            max_tokens=1024,
+            system=SYSTEM_PROMPT,
+            messages=[
+                {"role": "user", "content": question}
+            ]
+        )
+        if not message.content:
+            return "I apologise, I was unable to process your request. Please try again."
+        return message.content[0].text
+    except Exception:
+        return "I apologise, I am unable to process your request at the moment. Please try again."

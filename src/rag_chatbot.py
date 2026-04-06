@@ -32,7 +32,12 @@ def build_rag_engine():
 
 def ask_rag_concierge(question: str, engine=None) -> str:
     """Send a question to the RAG concierge and return the response."""
-    if engine is None:
-        engine = build_rag_engine()
-    response = engine.query(question)
-    return str(response)
+    if not question or not question.strip():
+        return "I'd be happy to help. Could you please ask me a question?"
+    try:
+        if engine is None:
+            engine = build_rag_engine()
+        response = engine.query(question)
+        return str(response)
+    except Exception:
+        return "I apologise, I am unable to process your request at the moment. Please try again."
