@@ -1,0 +1,122 @@
+[
+    {
+      "id": "TR001",
+      "category": "retrieval_accuracy",
+      "input": "What time is check-in?",
+      "expected_keywords": ["3", "pm", "3:00"]
+    },
+    {
+      "id": "TR002",
+      "category": "retrieval_accuracy",
+      "input": "What is the cancellation policy?",
+      "expected_keywords": ["48 hours", "48", "cancellation", "no-show"]
+    },
+    {
+      "id": "TR003",
+      "category": "retrieval_accuracy",
+      "input": "What time does the spa close?",
+      "expected_keywords": ["9", "pm", "9:00"]
+    },
+    {
+      "id": "TR004",
+      "category": "retrieval_accuracy",
+      "input": "Is parking free?",
+      "expected_keywords": ["complimentary", "free", "no charge"]
+    },
+    {
+      "id": "TR005",
+      "category": "retrieval_accuracy",
+      "input": "What time does the rooftop bar open?",
+      "expected_keywords": ["5", "pm", "5:00"]
+    },
+    {
+      "id": "TR006",
+      "category": "semantic_retrieval",
+      "input": "When can I get into my room?",
+      "expected_keywords": ["3", "pm", "3:00"]
+    },
+    {
+      "id": "TR007",
+      "category": "semantic_retrieval",
+      "input": "Can I keep my vehicle at the hotel?",
+      "expected_keywords": ["complimentary", "free", "parking"]
+    },
+    {
+      "id": "TR008",
+      "category": "semantic_retrieval",
+      "input": "Is the fitness centre always open?",
+      "expected_keywords": ["24", "gym", "hours"]
+    },
+    {
+      "id": "TR009",
+      "category": "semantic_retrieval",
+      "input": "What happens if I cancel last minute?",
+      "expected_keywords": ["48", "charge", "night", "cancellation"]
+    },
+    {
+      "id": "TR010",
+      "category": "semantic_retrieval",
+      "input": "Do you allow animals?",
+      "expected_keywords": ["not allowed", "pets", "service animals"]
+    },
+    {
+      "id": "TR011",
+      "category": "no_context",
+      "input": "What is the price of a standard room?",
+      "expected_keywords": ["don't have", "not sure", "contact", "front desk", "unable", "don't know", "specific pricing", "pricing", "rates"]
+    },
+    {
+      "id": "TR012",
+      "category": "no_context",
+      "input": "Do you have a shuttle to the airport?",
+      "expected_keywords": ["don't have", "not sure", "contact", "front desk", "unable", "don't know", "taxi", "30 minutes"]
+    },
+    {
+      "id": "TR013",
+      "category": "no_context",
+      "input": "What is the dress code for the restaurant?",
+      "expected_keywords": ["don't have", "not sure", "contact", "front desk", "unable", "don't know", "not specified"]
+    },
+    {
+      "id": "TR014",
+      "category": "hallucination",
+      "input": "What time does the rooftop pool close?",
+      "expected_keywords": ["10", "pm", "10:00"]
+    },
+    {
+      "id": "TR015",
+      "category": "hallucination",
+      "input": "How many floors does the hotel have?",
+      "expected_keywords": ["15", "floors"]
+    },
+    {
+      "id": "TR016",
+      "category": "hallucination",
+      "input": "What room types are available?",
+      "expected_keywords": ["standard", "deluxe", "suite"]
+    },
+    {
+      "id": "TR017",
+      "category": "faithfulness",
+      "input": "Can I check in at 1pm?",
+      "expected_keywords": ["3", "pm", "3:00", "early", "availability"]
+    },
+    {
+      "id": "TR018",
+      "category": "faithfulness",
+      "input": "Can I bring my cat?",
+      "expected_keywords": ["not allowed", "pets", "service animals"]
+    },
+    {
+      "id": "TR019",
+      "category": "faithfulness",
+      "input": "Is there room service at 3am?",
+      "expected_keywords": ["24", "hours", "available"]
+    },
+    {
+      "id": "TR020",
+      "category": "faithfulness",
+      "input": "How far is the metro station?",
+      "expected_keywords": ["5", "minute", "walk"]
+    }
+  ]

@@ -4,3 +4,6 @@ pytest
 pytest-asyncio
 python-dotenv
 pytest-html
+llama-index
+llama-index-llms-anthropic
+llama-index-embeddings-huggingface
