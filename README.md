@@ -70,6 +70,13 @@ Tests cover retrieval accuracy, semantic retrieval, hallucination resistance,
 answer faithfulness, and no-context handling.
 Test cases loaded from `data/rag_test_data.json`.
 
+### Layer 6 — Chaos and Resilience Testing (15 tests)
+Validates that both the standard chatbot and RAG chatbot handle failures gracefully.
+Covers API timeouts, API errors, empty responses, malformed responses, empty input,
+very long input, special characters, SQL injection attempts, and missing documents.
+During chaos testing, 4 real bugs were found and fixed in error handling and
+input validation across `src/chatbot.py` and `src/rag_chatbot.py`.
+
 ---
 
 ## Golden Dataset
@@ -87,6 +94,9 @@ The golden dataset contains 100 test cases across 5 files.
 | `data/adversarial_test_data.json` | 25 | Adversarial red teaming test cases |
 | `data/rag_test_data.json` | 20 | RAG pipeline test cases |
 | **Total** | **100** | |
+
+Chaos and resilience test cases are not stored in the golden dataset as they use
+mock injection rather than real API calls — no input/output pairs to store.
 
 ---
 
@@ -134,8 +144,6 @@ python -m pytest tests/test_rag.py -v
 
 ---
 
-## Tech Stack
-
 | Tool | Purpose |
 |---|---|
 | Python 3.12 | Primary language |
@@ -145,6 +153,7 @@ python -m pytest tests/test_rag.py -v
 | LlamaIndex | RAG pipeline framework |
 | HuggingFace Embeddings | Local text embeddings — no API cost |
 | DeepEval | LLM eval framework (evaluated) |
+| unittest.mock | Mock injection for chaos and resilience testing |
 | GitHub Actions | CI/CD pipeline |
 
 ---
