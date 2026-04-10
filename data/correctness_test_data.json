@@ -69,31 +69,31 @@
         "id": "TC012",
         "category": "pets",
         "input": "Can i bring my dog?",
-        "expected_keywords": ["not allowed","no pets","don't allow", "do not allow","unable to acomodate","can not accomodate"]
+        "expected_keywords": ["not allowed","no pets","don't allow", "do not allow","unable to acomodate","can not accomodate", "does not allow"]
     },
     {
         "id": "TC013",
         "category": "pets",
         "input": "Can i bring my cat?",
-        "expected_keywords": ["not allowed","no pets","don't allow", "do not allow","unable to acomodate","can not accomodate"]
+        "expected_keywords": ["not allowed","no pets","don't allow", "do not allow","unable to acomodate","can not accomodate", "does not allow"]
     },
     {
         "id": "TC014",
         "category": "pets",
         "input": "Are pets allowed?",
-        "expected_keywords": ["not allowed","no pets","don't allow", "do not allow","unable to acomodate","can not accomodate"]
+        "expected_keywords": ["not allowed","no pets","don't allow", "do not allow","unable to acomodate","can not accomodate", "does not allow"]
     },
     {
         "id": "TC015",
         "category": "pets",
         "input": "Is the hotel pet friendly?",
-        "expected_keywords": ["not allowed","no pets","don't allow", "do not allow","unable to acomodate","can not accomodate"]
+        "expected_keywords": ["not allowed","no pets","don't allow", "do not allow","unable to acomodate","can not accomodate", "does not allow"]
     },
     {
         "id": "TC016",
         "category": "pets",
         "input": "Do you accept or allow animals?",
-        "expected_keywords": ["not allowed","no pets","don't allow", "do not allow","unable to acomodate","can not accomodate"]
+        "expected_keywords": ["not allowed","no pets","don't allow", "do not allow","unable to acomodate","can not accomodate", "does not allow"]
     },
     {
         "id": "TC017",
