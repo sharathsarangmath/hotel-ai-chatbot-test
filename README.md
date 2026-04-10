@@ -6,6 +6,8 @@ across 100 test cases organised in a golden dataset.
 
 ---
 
+[![Hotel AI Chatbot QA Suite](https://github.com/sharathsarangmath/hotel-ai-chatbot-test/actions/workflows/test.yml/badge.svg)](https://github.com/sharathsarangmath/hotel-ai-chatbot-test/actions/workflows/test.yml)
+
 ## Project Structure
 ```
 hotel-ai-qa/
